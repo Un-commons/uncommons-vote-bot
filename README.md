@@ -78,7 +78,7 @@ As soon as such a poll is closed, the results will be visible. **Beware!**: such
 
 
 ## Botfather Commands
-
+- 菜单命令  
 ```txt
 start - Start the bot
 stop - Stop the bot
@@ -91,6 +91,10 @@ list_closed - List all closed polls and manage them
 notify - Activate notifications in external chats
 help - Show the help text
 ```
+- inline命令  
+```
+search - Search your polls by name or description
+```
 
 
 ## Build
@@ -101,4 +105,9 @@ help - Show the help text
    cp ultimate_pollbot.toml pollbot.toml
 3. poetry run python main.py initdb
 3. poetry run python main.py run
+```
+## Run 
+- Linux后台运行
+```
+poetry run python main.py run > myout.log 2>&1 &
 ```
