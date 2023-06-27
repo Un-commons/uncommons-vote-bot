@@ -154,7 +154,7 @@ def handle_single_vote(
     )
 
     # Judge Core Member
-    if config["telegram"]["core_member_name"] and (context.user.name not in config["telegram"]["core_member_name"]):
+    if config["telegram"]["core_member_id"] and (context.user.name not in config["telegram"]["core_member_id"]):
         vote_not_allowed = i18n.t("callback.vote.notallowed", locale=locale)
         context.query.answer(vote_not_allowed)
         return True
