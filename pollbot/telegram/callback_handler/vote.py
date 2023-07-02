@@ -228,7 +228,13 @@ def handle_limited_vote(
         .count()
     )
     allowed_votes = option.poll.number_of_votes
-
+    
+    # Judge Core Member
+    if config["telegram"]["core_member_name"] and (context.user.name not in config["telegram"]["core_member_name"]):
+        vote_not_allowed = i18n.t("callback.vote.notallowed", locale=locale)
+        context.query.answer(vote_not_allowed)
+        return True
+        
     # Remove vote
     if existing_vote:
         session.delete(existing_vote)
